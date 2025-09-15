@@ -40,7 +40,7 @@ for file in files:
     output += '<table cellspacing="0" cellpadding="0" width="100%">\n\n'
     for i in dictionary['#']:
         kz = str(dictionary["Schülerkennzahl"][int(i)-1])
-        img = "https://www.sokrates-bund.at/SOKB/PupilPicture/92041720250538.jpg" #"https://www.sokrates-bund.at/SOKB/PupilPicture/" + kz + ".jpg"
+        img = "https://www.sokrates-bund.at/SOKB/PupilPicture/" + kz + ".jpg"
         if (i-1) % cols == 0:
             output += '<tr>'
         output += '<td width="16.66%" height="'+str(height)+'" valign="center" align="center" style="border: 1px dashed lightgray;">'
@@ -55,8 +55,8 @@ for file in files:
     for i in dictionary['#']:
         z = int((i-1) / cols)
         mi = (z+1)*cols - ((i-1) % cols)-1
-        vorname = "Maximilian" #dictionary["Vorname"][mi]
-        familienname = "Mustermann" #dictionary["Familienname"][mi]
+        vorname = dictionary["Vorname"][mi]
+        familienname = dictionary["Familienname"][mi]
         if (i-1) % cols == 0:
             output += '<tr>'
         output += '<td width="16.66%" height="'+str(height)+'" valign="center" align="center">'
